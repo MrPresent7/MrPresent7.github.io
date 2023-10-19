@@ -6,6 +6,38 @@
     <title>Ha Trolled lmao</title>
 </head>
 <body>
-    <video controls src="rickroll.mp4" width="1760"></video>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/d1YBv2mWll0?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; lopp; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0q6yphdZhUA?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hiRacdl02w4?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hiRacdl02w4?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/d1YBv2mWll0?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0q6yphdZhUA?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0q6yphdZhUA?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hiRacdl02w4?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/d1YBv2mWll0?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
+<script type="text/javascript">
+	if (/chrome/i.test(navigator.userAgent)){
+		var ID = 'ID_of_your_iframe';
+		
+		document.getElementById(ID).onload= function() {
+			//taken from youtube embed js api example
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/iframe_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		};
+		var Player;
+		function onYouTubeIframeAPIReady() {
+			Player = new YT.Player(ID, {
+				events: {
+					'onReady': AutoPlayWorkaround
+				}
+			});
+		}
+		function AutoPlayWorkaround(Event) {
+			Event.target.playVideo();
+		}
+	}
+</script>
 </html>
