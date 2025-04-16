@@ -1,49 +1,80 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-    <title>Ha Trolled lmao</title>
+  <title>Hidden Videos</title>
+  <style>
+    .video-container {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/d1YBv2mWll0?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; lopp; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0q6yphdZhUA?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hiRacdl02w4?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; loop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hiRacdl02w4?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/d1YBv2mWll0?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0q6yphdZhUA?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0q6yphdZhUA?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hiRacdl02w4?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/d1YBv2mWll0?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <h1>Click to Reveal zoljas dick size</h1>
+  <button onclick="revealAndPlayAll()">▶️ Dont tell zolja</button>
+
+  <!-- Hidden video containers -->
+  <div class="video-container" id="container1">
+    <iframe id="vid1" width="560" height="315"
+      src="https://www.youtube.com/embed/d1YBv2mWll0?enablejsapi=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="video-container" id="container4">
+    <iframe id="vid4" width="560" height="315"
+      src="https://www.youtube.com/embed/d1YBv2mWll0?enablejsapi=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>  <div class="video-container" id="container5">
+    <iframe id="vid5" width="560" height="315"
+      src="https://www.youtube.com/embed/d1YBv2mWll0?enablejsapi=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="video-container" id="container2">
+    <iframe id="vid2" width="560" height="315"
+      src="https://www.youtube.com/embed/0q6yphdZhUA?enablejsapi=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="video-container" id="container3">
+    <iframe id="vid3" width="560" height="315"
+      src="https://www.youtube.com/embed/hiRacdl02w4?enablejsapi=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- YouTube API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script>
+    let players = [];
+
+    function onYouTubeIframeAPIReady() {
+      players.push(new YT.Player('vid1'));
+      players.push(new YT.Player('vid2'));
+      players.push(new YT.Player('vid3'));
+	  players.push(new YT.Player('vid4'));
+	  players.push(new YT.Player('vid5'));
+    }
+
+    function revealAndPlayAll() {
+      // Show video containers
+      document.getElementById('container1').style.display = 'block';
+      document.getElementById('container2').style.display = 'block';
+      document.getElementById('container3').style.display = 'block';
+	  document.getElementById('container4').style.display = 'block';
+	  document.getElementById('container5').style.display = 'block';
+      // Play all videos
+      for (let player of players) {
+        if (player.playVideo) {
+          player.playVideo();
+        }
+      }
+    }
+  </script>
+
 </body>
-<button onclick="document.getElementById('myVideo').play()">Play Video</button>
-
-<video id="myVideo" controls>
-  <source src="your-video.mp4" type="video/mp4">
-</video>
-
-<script type="text/javascript">
-	if (/chrome/i.test(navigator.userAgent)){
-		var ID = 'ID_of_your_iframe';
-		
-		document.getElementById(ID).onload= function() {
-			//taken from youtube embed js api example
-			var tag = document.createElement('script');
-			tag.src = "https://www.youtube.com/iframe_api";
-			var firstScriptTag = document.getElementsByTagName('script')[0];
-			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-		};
-		var Player;
-		function onYouTubeIframeAPIReady() {
-			Player = new YT.Player(ID, {
-				events: {
-					'onReady': AutoPlayWorkaround
-				}
-			});
-		}
-		function AutoPlayWorkaround(Event) {
-			Event.target.playVideo();
-		}
-	}
-</script>
 </html>
