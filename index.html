@@ -16,6 +16,12 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/hiRacdl02w4?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/d1YBv2mWll0?autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
+<button onclick="document.getElementById('myVideo').play()">Play Video</button>
+
+<video id="myVideo" controls>
+  <source src="your-video.mp4" type="video/mp4">
+</video>
+
 <script type="text/javascript">
 	if (/chrome/i.test(navigator.userAgent)){
 		var ID = 'ID_of_your_iframe';
